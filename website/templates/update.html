@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<h1 align="center">Update</h1>
+<br>
+<div class="user">
+    <h6 align="center">{{ user.name }}</h6>
+</div>
+<br>
+</div>
+<ul class="list-group list-group-flush" id="notes">
+   
+    
+</ul>
+<br><br>
+
+<form method="post" action="/update/{{ note.id }}">
+    <div class="form-field d-flex align-items-center">
+        <textarea name="update" id="update" class="form-control">{{note.data}}</textarea> >
+    </div>
+    <br>
+    <div align="center">
+        <button type="submit" class="btn btn-outline-primary">Update Note</button>
+    </div> 
+</form>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<h1 align="center">Notes</h1>
+<br>
+
+<br>
+
+{% for note in user.notes %}
+{% if note %}
+<div class="wrap">
+<table>
+    <tr>
+        <th>Note</th>
+        <th>Added</th>
+        <th>Action</th>
+    </tr>
+    <tr>
+        <td>
+        {{ note.data}}
+        </td>
+        <td>{{ note.date  }}</td>
+        <td>
+            <button type="button" class="close btn btn-danger" onclick="deleteNote({{ note.id }})">
+                <span aria-hidden="true">Delete</span>
+            </button>
+            <br>
+            <a href="/update/{{ note.id }}">
+                <button type="button" class="close btn btn-success">
+                    <span aria-hidden="true">Update</span>
+                </button>
+            </a>
+        </td>
+    </tr>
+</table>
+</div>
+
+{% endif %}
+{% endfor %}
+
+
+
+<br><br>
+
+<form method="post">
+    <div class="form-field d-flex align-items-center">
+        <textarea name="note" id="note" class="form-control" placeholder="Enter note here"></textarea>
+    </div>
+    <br>
+    <div align="center">
+        <button type="submit" class="btn btn-outline-primary">Add Note</button>
+    </div> 
+</form>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+
+<p>
+{% for note in notes %}
+    {{ note.data }}
+{% endfor %}
+</p>
+
+{% endblock %}

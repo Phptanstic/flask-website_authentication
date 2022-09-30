@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block title%}Sign Up{% endblock %}
+
+{% block content %}
+<div class="wrapper">
+    <div class="logo">
+        <img src="https://www.freepnglogos.com/uploads/yellow-black-batman-logo-png-2.png" width="200" alt="An image of a bat logo">
+    </div>
+    <div class="text-center mt-4 name">
+        Sign Up
+    </div>
+    <form class="p-3 mt-3" method="post">
+        <div class="form-field d-flex align-items-center">
+            <span class="fa fa-envelope"></span>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="far fa-user"></span>
+            <input type="text" name="name" id="name" placeholder="Username" required>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="password1" id="password1" placeholder="Password" required>
+        </div>
+        <div class="form-field d-flex align-items-center">
+            <span class="fas fa-key"></span>
+            <input type="password" name="password2" id="password2" placeholder="Confirm password" required>
+        </div>
+        <button type="submit" class="btn mt-3">Register</button>
+        <!-- <div class="submit">
+        <input type="submit" value="Register">
+        </div> -->
+        
+        
+    </form>
+    <div class="text-center fs-6">
+        <a href="/login">OR Login</a>
+    </div>
+</div>
+{% endblock %}
