@@ -13,14 +13,12 @@
 <table>
     <tr>
         <th>Note</th>
-        <th>Added</th>
         <th>Action</th>
     </tr>
     <tr>
         <td>
         {{ note.data}}
         </td>
-        <td>{{ note.date  }}</td>
         <td>
             <button type="button" class="close btn btn-danger" onclick="deleteNote({{ note.id }})">
                 <span aria-hidden="true">Delete</span>

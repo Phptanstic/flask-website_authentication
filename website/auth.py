@@ -15,9 +15,9 @@ def login():
     if request.method =='POST':
         email = request.form.get('email')
         password = request.form.get('password')
+
         
-
-
+        
         user = User.query.filter_by(email=email).first()
         if user:
             if check_password_hash(user.password, password):
@@ -39,6 +39,7 @@ def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
+
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
     if request.method =='POST':
@@ -46,7 +47,6 @@ def sign_up():
         name = request.form.get('name')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
-
 
         user = User.query.filter_by(email=email).first()
         if user:
@@ -65,8 +65,5 @@ def sign_up():
             db.session.commit()
             flash('Account successfully created', category='success')
             return redirect(url_for('views.home')) 
-
-
-               
               
     return render_template('sign-up.html', user=current_user)
